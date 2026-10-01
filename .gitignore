@@ -1,0 +1,11 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+
+# Node / Cache
+node_modules/
+.cache/
+dist/

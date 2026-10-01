@@ -1,0 +1,31 @@
+{
+  "name": "stitch",
+  "displayName": "Stitch for Antigravity",
+  "version": "1.0.0",
+  "description": "Independent community-adapted UI/UX design intelligence and prototyping suite for Google Stitch in Antigravity. Features 17 specialized skills, cloud MCP server integration, DESIGN.md synthesis, and production React/Vite/Tailwind code generation.",
+  "logo": "assets/logo.png",
+  "suggestedPrompts": [
+    "Design a modern SaaS analytics dashboard with dark glassmorphism styling",
+    "Extract a semantic DESIGN.md design system from my frontend codebase",
+    "Convert this Stitch HTML mockup into production React and Tailwind components"
+  ],
+  "author": {
+    "name": "Andrew Mason (adapted from Google Labs)",
+    "url": "https://github.com/AndrewMason7/stitch-plugin"
+  },
+  "homepage": "https://github.com/AndrewMason7/stitch-plugin",
+  "repository": "https://github.com/AndrewMason7/stitch-plugin.git",
+  "license": "Apache-2.0",
+  "category": "Design & UI",
+  "keywords": [
+    "stitch",
+    "mcp",
+    "ui-design",
+    "react",
+    "tailwind",
+    "design-systems",
+    "prototyping",
+    "frontend",
+    "google-labs"
+  ]
+}
