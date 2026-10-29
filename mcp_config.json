@@ -4,7 +4,13 @@
       "serverUrl": "https://stitch.googleapis.com/mcp",
       "headers": {
         "X-Goog-Api-Key": "${STITCH_API_KEY}"
-      }
+      },
+      "variables": [
+        {
+          "name": "STITCH_API_KEY",
+          "description": "Google Stitch API Key"
+        }
+      ]
     }
   }
 }

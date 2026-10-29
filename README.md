@@ -20,6 +20,7 @@ An independent Antigravity plugin for Google Stitch that integrates AI-assisted 
 - [Key features](#key-features)
 - [Directory structure](#directory-structure)
 - [Prerequisites](#prerequisites)
+- [Installation](#installation)
 - [Quickstart](#quickstart)
 - [Configuration and security](#configuration-and-security)
 - [MCP server tools](#mcp-server-tools)
@@ -104,6 +105,24 @@ Before using the plugin, verify that your environment meets the following requir
 
 ---
 
+## Installation
+
+Install the plugin directly from GitHub into Google Antigravity:
+
+### Via Shell / Terminal
+
+```bash
+agy plugin install https://github.com/AndrewMason7/stitch-plugin
+```
+
+### Via Antigravity CLI / TUI
+
+```text
+/plugin install https://github.com/AndrewMason7/stitch-plugin
+```
+
+---
+
 ## Quickstart
 
 Follow these steps to configure and use the Stitch plugin:
@@ -145,7 +164,13 @@ The plugin connects to Stitch through `mcp_config.json`:
       "serverUrl": "https://stitch.googleapis.com/mcp",
       "headers": {
         "X-Goog-Api-Key": "${STITCH_API_KEY}"
-      }
+      },
+      "variables": [
+        {
+          "name": "STITCH_API_KEY",
+          "description": "Google Stitch API Key"
+        }
+      ]
     }
   }
 }
@@ -222,7 +247,7 @@ For complex, multi-screen, or end-to-end prototyping tasks, select the specializ
 
 1. Open the agent picker dropdown in the chat input area.
 2. Choose **`stitch-designer`** (UI/UX Prototyper).
-3. Enter your design prompt or product brief (for example: *"Design a multi-screen healthcare telemetry dashboard with dark mode and export to React components"*).
+3. Enter your design prompt or product brief (for example: *\"Design a multi-screen healthcare telemetry dashboard with dark mode and export to React components\"*).
 
 The custom agent operates autonomously using the prompt enhancement pipeline and design system rules defined in [agents/stitch-designer.md](agents/stitch-designer.md).
 
@@ -268,4 +293,4 @@ Distributed under the Apache License 2.0. See [LICENSE](LICENSE) and [NOTICE](NO
 
 ## Disclaimer
 
-This project is provided "as is", without warranties or conditions of any kind, either express or implied. This repository is an independent community project and is not an official product, service, or distribution of Google LLC or Alphabet Inc. Google, Google Stitch, and Google Antigravity are trademarks of Google LLC. Use of these trademarks in this project is strictly nominative and does not imply any affiliation, sponsorship, endorsement, or approval by Google LLC.
+This project is provided \"as is\", without warranties or conditions of any kind, either express or implied. This repository is an independent community project and is not an official product, service, or distribution of Google LLC or Alphabet Inc. Google, Google Stitch, and Google Antigravity are trademarks of Google LLC. Use of these trademarks in this project is strictly nominative and does not imply any affiliation, sponsorship, endorsement, or approval by Google LLC.
