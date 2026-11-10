@@ -8,7 +8,9 @@
       "variables": [
         {
           "name": "STITCH_API_KEY",
-          "description": "Google Stitch API Key"
+          "title": "Google Stitch API Key",
+          "description": "Personal API key used to authenticate requests to the remote Google Stitch MCP server.",
+          "link": "https://stitch.withgoogle.com"
         }
       ]
     }

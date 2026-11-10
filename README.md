@@ -1,6 +1,6 @@
-# Stitch Plugin for Antigravity
+# Google Stitch
 
-An independent Antigravity plugin for Google Stitch that integrates AI-assisted cloud UI/UX prototyping, 15 verified MCP tools, 17 standardized design-to-code skills, and the `@google/design.md` token engine.
+AI-assisted cloud UI/UX prototyping, 15 verified MCP tools, 17 standardized design-to-code skills, and the `@google/design.md` token engine.
 
 [![Antigravity](https://img.shields.io/badge/Antigravity-Plugin-4285F4?logo=google&logoColor=white)](https://antigravity.google)
 [![Google Stitch](https://img.shields.io/badge/Google-Stitch-EA4335?logo=google&logoColor=white)](https://stitch.withgoogle.com)
@@ -25,6 +25,7 @@ An independent Antigravity plugin for Google Stitch that integrates AI-assisted 
 - [Configuration and security](#configuration-and-security)
 - [MCP server tools](#mcp-server-tools)
 - [Bundled skills](#bundled-skills)
+- [Bundled knowledge base and tooling](#bundled-knowledge-base-and-tooling)
 - [Custom agent: stitch-designer](#custom-agent-stitch-designer)
 - [Design token workflow](#design-token-workflow)
 - [License](#license)
@@ -55,38 +56,64 @@ By combining Stitch's remote Model Context Protocol (MCP) server with token spec
 
 ## Directory structure
 
-This repository follows the official Antigravity plugin directory layout:
+This repository follows the official Antigravity plugin directory layout, bundling all reference schemas, starter templates, and validation scripts locally for zero-latency offline agent access:
 
 ```text
 stitch/
-├── plugin.json                 # Plugin manifest, branding, and metadata
-├── installed_version.json       # Version tracking (v1.0.0)
-├── mcp_config.json             # Remote Google Stitch HTTP MCP endpoint config
-├── README.md                   # Plugin documentation and user guide
+├── plugin.json                 # Plugin manifest ($schema validated)
+├── installed_version.json      # Version tracking (v1.0.0)
+├── mcp_config.json             # Remote Google Stitch HTTP MCP endpoint & credential prompt
+├── README.md                   # Documentation and architecture guide
 ├── assets/
-│   └── logo.png                # Plugin logo asset
+│   └── logo.png                # 512x512 plugin icon
 ├── agents/
 │   └── stitch-designer.md      # Specialized UI/UX & prototyping custom agent
 ├── rules/
-│   └── AGENTS.md               # Architectural rules, guidelines, and quality standards
-└── skills/                     # 17 standardized Stitch engineering skills
-    ├── stitch/                 # Master orchestrator & /stitch command handler
-    ├── stitch-code-to-design/  # Reverse-engineers frontend code into Stitch
-    ├── stitch-design-md/       # DESIGN.md synthesis, spec guides & starter templates
-    ├── stitch-enhance-prompt/  # Prompt enhancement pipeline & vocabulary recipes
-    ├── stitch-extract-design-md/   # Extracts DESIGN.md from existing codebases
-    ├── stitch-extract-static-html/ # Captures self-contained HTML from web applications
-    ├── stitch-generate-design/ # Screen generation & MCP tool references
-    ├── stitch-loop/            # Autonomous baton-passing site build loop
-    ├── stitch-manage-design-system/ # Manages and applies design systems in Stitch
-    ├── stitch-react-components/# Converts Stitch HTML into Vite/React components
-    ├── stitch-react-native/    # Converts Stitch HTML into React Native components
-    ├── stitch-react-vite-dashboard/ # Generates production dashboards with TanStack Query
-    ├── stitch-remotion/        # Generates animated walkthrough videos with Remotion
-    ├── stitch-shadcn-ui/       # Integrates shadcn/ui component library
-    ├── stitch-site-md/         # Synthesizes site constitutions (SITE.md)
-    ├── stitch-taste-design/    # Enforces anti-generic design standards
-    └── stitch-upload-to-stitch/# Uploads assets and design markdown to Stitch projects
+│   └── AGENTS.md               # Always-on design-to-code & anti-slop guardrails
+└── skills/                     # 17 self-contained skills with bundled docs & scripts
+    ├── stitch/                 # Master /stitch orchestrator & 4-step project lifecycle
+    ├── stitch-design-md/       # Dual-layer DESIGN.md synthesis (YAML tokens + prose)
+    │   ├── references/         #   └── design-systems.md (Spec & 3-step cloud sync)
+    │   ├── templates/          #   └── DESIGN.md (WCAG AA lint-verified starter)
+    │   └── examples/           #   └── DESIGN.md (Full annotated token + prose sample)
+    ├── stitch-generate-design/ # Screen generation, editing & variant exploration
+    │   ├── references/         #   ├── mcp-tools.md (15 tool schemas & payload rules)
+    │   │                       #   ├── design-mappings.md & prompt-keywords.md
+    │   └── examples/           #   └── enhanced-prompt.md
+    ├── stitch-enhance-prompt/  # Structural prompt enhancement pipeline
+    │   └── references/         #   └── KEYWORDS.md & prompt-enhancement-recipes.md
+    ├── stitch-extract-design-md/ # Reverse-engineers DESIGN.md from source code
+    │   ├── references/         #   └── Framework guides (React, Vue, Svelte, Angular, CSS)
+    │   └── examples/           #   └── DESIGN.md (47-token Material 3 extraction sample)
+    ├── stitch-extract-static-html/ # Inlines live DOM/CSS into standalone HTML
+    │   └── scripts/            #   └── snapshot.ts, extract_inline_html.ts, post_process.ts
+    ├── stitch-manage-design-system/ # Cloud design system CRUD & screen application
+    │   └── references/         #   └── tool-schema.md (Server-validated font/theme enums)
+    ├── stitch-react-components/# Stitch HTML → modular React + Vite components
+    │   ├── references/         #   └── design-to-code.md (Dead-link & responsive nav fixes)
+    │   ├── resources/          #   └── architecture-checklist.md, style-guide.json, template
+    │   └── scripts/            #   └── fetch-stitch.sh & validate.js (@swc/core AST linter)
+    ├── stitch-react-native/    # Stitch HTML → React Native StyleSheet components
+    │   ├── resources/          #   └── architecture-checklist.md & component-template.tsx
+    │   └── scripts/            #   └── fetch-stitch.sh & validate.js
+    ├── stitch-shadcn-ui/       # shadcn/ui discovery, theming & block composition
+    │   ├── resources/          #   └── setup, catalog, customization & migration guides
+    │   ├── examples/           #   └── auth-layout.tsx, data-table.tsx, form-pattern.tsx
+    │   └── scripts/            #   └── verify-setup.sh
+    ├── stitch-remotion/        # Programmatic walkthrough videos from Stitch screens
+    │   ├── resources/          #   └── composition-checklist.md & screen-slide-template.tsx
+    │   ├── examples/           #   └── WalkthroughComposition.tsx & screens.json
+    │   └── scripts/            #   └── download-stitch-asset.sh
+    ├── stitch-loop/            # Autonomous baton-passing multi-page site builder
+    │   ├── resources/          #   └── baton-schema.md & site-template.md
+    │   └── examples/           #   └── SITE.md & next-prompt.md
+    ├── stitch-upload-to-stitch/# In-process base64 asset & DESIGN.md uploader
+    │   └── scripts/            #   └── upload_to_stitch.py
+    ├── stitch-code-to-design/  # End-to-end codebase → Stitch cloud migration chain
+    ├── stitch-react-vite-dashboard/ # TanStack Query + token-bridged data dashboards
+    ├── stitch-site-md/         # Synthesizes SITE.md project constitutions
+    └── stitch-taste-design/    # Enforces calibrated anti-generic UI standards
+        └── resources/          #   └── DESIGN.md (4 style dials & WCAG AA token baseline)
 ```
 
 ---
@@ -168,7 +195,9 @@ The plugin connects to Stitch through `mcp_config.json`:
       "variables": [
         {
           "name": "STITCH_API_KEY",
-          "description": "Google Stitch API Key"
+          "title": "Google Stitch API Key",
+          "description": "Personal API key used to authenticate requests to the remote Google Stitch MCP server.",
+          "link": "https://stitch.withgoogle.com"
         }
       ]
     }
@@ -224,7 +253,7 @@ The plugin includes 17 standardized skills, organized by functional area:
 ### Design system and tokens
 
 - **`stitch-design-md`**: Synthesizes design tokens into markdown specifications using the [DESIGN.md starter template](skills/stitch-design-md/templates/DESIGN.md).
-- **`stitch-manage-design-system`**: Creates, updates, and applies design systems in the Stitch cloud. Consult the [design system synchronization guide](skills/stitch-design-md/references/design-systems.md).
+- **`stitch-manage-design-system`**: Creates, updates, and applies design systems in the Stitch cloud. Consult the [design system synchronization guide](skills/stitch-design-md/references/design-systems.md) and [tool schema reference](skills/stitch-manage-design-system/references/tool-schema.md).
 - **`stitch-taste-design`**: Enforces strict typographic contrast, color calibration, and micro-motion standards.
 - **`stitch-upload-to-stitch`**: Encodes and uploads local assets and documentation to Stitch projects.
 
@@ -241,13 +270,33 @@ The plugin includes 17 standardized skills, organized by functional area:
 
 ---
 
+## Bundled knowledge base and tooling
+
+Every skill in this plugin is engineered for **zero-latency offline context**. Instead of relying on runtime web fetches to external documentation, all tool schemas, framework heuristics, starter templates, and AST validators are co-located inside their respective skill directories:
+
+| Category | Bundled Asset | Purpose |
+| :--- | :--- | :--- |
+| **MCP & API Schemas** | [`mcp-tools.md`](skills/stitch-generate-design/references/mcp-tools.md) | Complete reference for all 15 Stitch MCP tools, resource name formats (`projects/{id}` vs numeric `projectId`), polling intervals, and payload examples. |
+| | [`tool-schema.md`](skills/stitch-manage-design-system/references/tool-schema.md) | Server-validated `designSystem` object schemas, `colorVariant` enums, and supported typography families. |
+| | [`stitch-api-reference.md`](skills/stitch-react-components/resources/stitch-api-reference.md) | Reference for Stitch screen metadata, GCS asset download URLs, and token mapping. |
+| **Design System & `@google/design.md` Spec** | [`design-systems.md`](skills/stitch-design-md/references/design-systems.md) | Dual-layer `DESIGN.md` specification (normative YAML frontmatter + semantic prose), 4 configuration dials, and 3-step cloud synchronization workflow. |
+| | [`templates/DESIGN.md`](skills/stitch-design-md/templates/DESIGN.md) | Starter `DESIGN.md` template pre-validated against `npx @google/design.md lint` (`0 errors, 0 warnings`, WCAG AA contrast verified). |
+| | [`taste-design/DESIGN.md`](skills/stitch-taste-design/resources/DESIGN.md) & [`examples/DESIGN.md`](skills/stitch-design-md/examples/DESIGN.md) | Lint-verified `DESIGN.md` baselines featuring configurable Creativity, Density, Variance, and Motion Intent dials. |
+| **Prompt Engineering** | [`prompt-enhancement-recipes.md`](skills/stitch-enhance-prompt/references/prompt-enhancement-recipes.md) | Structural prompt templates (SaaS Executive Dashboard, Mobile DeFi Tracker, Developer Landing Page) enforcing strict theme separation. |
+| | [`design-mappings.md`](skills/stitch-generate-design/references/design-mappings.md), [`prompt-keywords.md`](skills/stitch-generate-design/references/prompt-keywords.md) & [`KEYWORDS.md`](skills/stitch-enhance-prompt/references/KEYWORDS.md) | UI/UX component vocabulary, layout hierarchies, and atmosphere descriptors. |
+| **Framework Extraction Guides** | [`react-tailwind.md`](skills/stitch-extract-design-md/references/react-tailwind.md), [`vue.md`](skills/stitch-extract-design-md/references/vue.md), [`svelte.md`](skills/stitch-extract-design-md/references/svelte.md), [`angular.md`](skills/stitch-extract-design-md/references/angular.md), [`plain-css.md`](skills/stitch-extract-design-md/references/plain-css.md) | Framework-specific heuristics for reverse-engineering design tokens from existing frontend repositories, paired with a [47-token Material 3 extraction sample](skills/stitch-extract-design-md/examples/DESIGN.md). |
+| **Code Remediation & AST Validation** | [`design-to-code.md`](skills/stitch-react-components/references/design-to-code.md) & [`architecture-checklist.md`](skills/stitch-react-components/resources/architecture-checklist.md) | Runbooks for decomposing monolithic Stitch HTML, fixing placeholder `href="#"` links, and resolving `md:hidden` desktop navigation gaps. |
+| | [`validate.js`](skills/stitch-react-components/scripts/validate.js), [`extract_inline_html.ts`](skills/stitch-extract-static-html/scripts/extract_inline_html.ts) & [`upload_to_stitch.py`](skills/stitch-upload-to-stitch/scripts/upload_to_stitch.py) | `@swc/core` AST validator for catching hardcoded hex values, DOM snapshot/CSS inlining scripts, and in-process base64 asset uploader. |
+
+---
+
 ## Custom agent: stitch-designer
 
 For complex, multi-screen, or end-to-end prototyping tasks, select the specialized **`stitch-designer`** custom agent directly from the agent picker inside the Antigravity application:
 
 1. Open the agent picker dropdown in the chat input area.
 2. Choose **`stitch-designer`** (UI/UX Prototyper).
-3. Enter your design prompt or product brief (for example: *\"Design a multi-screen healthcare telemetry dashboard with dark mode and export to React components\"*).
+3. Enter your design prompt or product brief (for example: *"Design a multi-screen healthcare telemetry dashboard with dark mode and export to React components"*).
 
 The custom agent operates autonomously using the prompt enhancement pipeline and design system rules defined in [agents/stitch-designer.md](agents/stitch-designer.md).
 
@@ -293,4 +342,4 @@ Distributed under the Apache License 2.0. See [LICENSE](LICENSE) and [NOTICE](NO
 
 ## Disclaimer
 
-This project is provided \"as is\", without warranties or conditions of any kind, either express or implied. This repository is an independent community project and is not an official product, service, or distribution of Google LLC or Alphabet Inc. Google, Google Stitch, and Google Antigravity are trademarks of Google LLC. Use of these trademarks in this project is strictly nominative and does not imply any affiliation, sponsorship, endorsement, or approval by Google LLC.
+This project is provided "as is", without warranties or conditions of any kind, either express or implied. This repository is an independent community project and is not an official product, service, or distribution of Google LLC or Alphabet Inc. Google, Google Stitch, and Google Antigravity are trademarks of Google LLC. Use of these trademarks in this project is strictly nominative and does not imply any affiliation, sponsorship, endorsement, or approval by Google LLC.

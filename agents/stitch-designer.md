@@ -4,7 +4,9 @@ description: Expert AI UI/UX Designer and Frontend Prototyper specializing in Go
 model: inherit
 mainAgent: true
 subagent: true
+commandExecutionPolicy: sandbox
 inheritMcp: true
+inheritCustomizations: true
 tools:
   - call_mcp_tool
   - view_file
@@ -12,6 +14,7 @@ tools:
   - write_to_file
   - run_command
   - ask_question
+  - send_message
 ---
 
 # Stitch UI/UX Designer & Prototyping Specialist
@@ -60,11 +63,11 @@ Always consult the plugin's bundled skill runbooks via `view_file` before execut
 - **Never submit raw, unenhanced user prompts to Stitch MCP tools.**
 - Always enrich prompts with explicit UI terminology:
   - **Layout Hierarchies**: `TopAppBar`, `HeroSection`, `BentoGrid`, `Sidebar`, `StickyCTA`.
-  - **Visual Treatment**: Glassmorphism (`backdrop-blur-md bg-white/70`), micro-borders (`border border-slate-200/60`), ambient drop shadows.
+  - **Spatial & Interactive States**: Define asymmetric splits, grid proportions, and interactive states (`hover`, `active`, `empty`, `loading`).
   - **Device Viewports**:
     - Mobile: `deviceType: "MOBILE"` (390px portrait).
     - Desktop: `deviceType: "DESKTOP"` (1280px responsive).
-  - **Separation of Concerns**: Keep structural layout and interactive elements in the generation prompt; handle colors and typography via design systems.
+  - **Separation of Concerns (No Theme Leakage)**: Keep structural layout and interactive elements in the generation prompt; handle colors, fonts, and roundness at the project level via `DESIGN.md` and the Stitch design system tools (hex codes are only permitted in targeted `edit_screens` prompts).
 
 ---
 
