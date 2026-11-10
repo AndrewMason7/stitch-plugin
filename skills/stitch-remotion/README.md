@@ -40,10 +40,10 @@ This skill bridges Stitch (UI design platform) and Remotion (programmatic video 
 
 ## Installation
 
-Install this skill using:
+Install the plugin using:
 
 ```bash
-npx skills add google-labs-code/stitch-skills --skill remotion --global
+agy plugin install https://github.com/AndrewMason7/stitch-plugin
 ```
 
 ## File Structure
@@ -93,8 +93,8 @@ project/
 
 ## Related Skills
 
-- **design-md**: Extract design system from Stitch projects (useful for consistent branding in videos)
-- **react-components**: Convert Stitch designs to React (if you want interactive demos instead of videos)
+- **stitch-design-md**: Extract design system from Stitch projects (useful for consistent branding in videos)
+- **stitch-react-components**: Convert Stitch designs to React (if you want interactive demos instead of videos)
 
 ## Learn More
 

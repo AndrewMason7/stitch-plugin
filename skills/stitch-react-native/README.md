@@ -3,7 +3,7 @@
 ## Install
 
 ```bash
-npx skills add google-labs-code/stitch-skills --skill react-native --global
+agy plugin install https://github.com/AndrewMason7/stitch-plugin
 ```
 
 ## Example Prompt
@@ -17,7 +17,7 @@ Convert my Login screen in my Stitch Project to React Native components.
 This skill follows the **Agent Skills** open standard. Each skill is self-contained with its own logic, validation scripts, and design tokens.
 
 ```text
-skills/react-native/
+skills/stitch-react-native/
 ├── SKILL.md           — Core instructions & workflow
 ├── package.json       — Validator dependencies
 ├── scripts/           — Networking & AST validation

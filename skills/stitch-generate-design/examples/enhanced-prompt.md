@@ -37,5 +37,5 @@ high-performance.
 ---
 💡 **Tip**: Notice how the enhanced prompt describes **structure and content**
 without specifying hex codes, font families, or color roles. The design system
-(created via the manage-design-system skill) handles all visual theming at the project
+(created via the `stitch-manage-design-system` skill) handles all visual theming at the project
 level.

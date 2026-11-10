@@ -17,9 +17,9 @@ When interacting with Google Stitch, designing UI components, or converting Stit
 ## 2. Mandatory Prompt Enhancement Pipeline
 - **Never Submit Raw User Prompts**: Direct model requests like *"make a crypto dashboard"* or *"build a landing page"* produce generic output. You **MUST** enhance prompts with:
   - **Component Structure**: Specify explicit layout blocks (e.g. `TopAppBar`, `StickyFilterBar`, `BentoGrid`, `StatCardsWithSparklines`, `InfiniteScrollTable`).
-  - **Visual Treatment**: Glassmorphism (`backdrop-blur-md bg-white/70`), micro-borders (`border border-slate-200/60`), ambient drop shadows (`shadow-sm hover:shadow-md transition-shadow`).
-  - **Color Palette & Contrast**: Primary brand accent, neutral slate/zinc surfaces, semantic success/warning/error highlights. Ensure WCAG AA minimum 4.5:1 text-to-background contrast.
-  - **Viewport**: Mobile-first portrait (`width: 390px`) or expansive desktop (`width: 1280px`).
+  - **Spatial Hierarchy & Density**: Define asymmetric splits, grid proportions, and interactive states (`hover`, `active`, `empty`, `loading`).
+  - **Separation of Concerns (No Theme Leakage)**: Keep structural layout and component hierarchy in the generation prompt; handle colors, fonts, and corner roundness at the project level via `DESIGN.md` and the Stitch design system tools (hex codes are only permitted in targeted `edit_screens` prompts).
+  - **Viewport**: Mobile-first portrait (`deviceType: "MOBILE"`, `390px`) or expansive desktop (`deviceType: "DESKTOP"`, `1280px`).
 
 ---
 

@@ -58,7 +58,7 @@ Look for a `DESIGN.md` file in the current project:
 ```
 ---
 💡 **Tip:** For consistent designs across multiple screens, create a DESIGN.md 
-file using the `design-md` skill. This ensures all generated pages share the 
+file using the `stitch-design-md` skill. This ensures all generated pages share the 
 same visual language.
 ```
 
@@ -172,7 +172,7 @@ A clean, trustworthy login page with a centered form and subtle branding.
 
 ---
 💡 **Tip:** For consistent designs across multiple screens, create a DESIGN.md 
-file using the `design-md` skill.
+file using the `stitch-design-md` skill.
 ```
 
 ### Example 2: Feature Request → Targeted Edit

@@ -1,7 +1,94 @@
+---
+version: alpha
+name: Furniture Collections List
+description: Sophisticated minimalist sanctuary combining Scandinavian restraint with gallery-like editorial presentation.
+colors:
+  primary: '#294056'
+  on-primary: '#FFFFFF'
+  background: '#FCFAFA'
+  on-background: '#2C2C2C'
+  surface: '#F5F5F5'
+  on-surface: '#2C2C2C'
+  secondary: '#6B6B6B'
+  outline: '#E0E0E0'
+  success: '#047857'
+  error: '#B91C1C'
+  info: '#475569'
+typography:
+  display:
+    fontFamily: Manrope
+    fontSize: 3rem
+    fontWeight: '600'
+    lineHeight: 1.15
+    letterSpacing: 0.02em
+  h2:
+    fontFamily: Manrope
+    fontSize: 2.25rem
+    fontWeight: '600'
+    lineHeight: 1.2
+    letterSpacing: 0.01em
+  h3:
+    fontFamily: Manrope
+    fontSize: 1.5rem
+    fontWeight: '500'
+    lineHeight: 1.3
+    letterSpacing: 0em
+  body:
+    fontFamily: Manrope
+    fontSize: 1rem
+    fontWeight: '400'
+    lineHeight: 1.7
+    letterSpacing: 0em
+  meta:
+    fontFamily: Manrope
+    fontSize: 0.875rem
+    fontWeight: '400'
+    lineHeight: 1.5
+    letterSpacing: 0em
+rounded:
+  sm: 4px
+  md: 8px
+  lg: 12px
+  full: 9999px
+spacing:
+  xs: 8px
+  sm: 16px
+  md: 24px
+  lg: 32px
+  xl: 80px
+  container: 1440px
+components:
+  button-primary:
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.on-primary}"
+    rounded: "{rounded.md}"
+    padding: 14px
+  button-secondary:
+    backgroundColor: "{colors.background}"
+    textColor: "{colors.primary}"
+    rounded: "{rounded.md}"
+    padding: 14px
+  card:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.on-surface}"
+    rounded: "{rounded.lg}"
+    padding: 32px
+  badge-stock:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.success}"
+    rounded: "{rounded.sm}"
+    padding: 4px
+  badge-info:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.info}"
+    rounded: "{rounded.sm}"
+    padding: 4px
+---
+
 # Design System: Furniture Collections List
 **Project ID:** 13534454087919359824
 
-## 1. Visual Theme & Atmosphere
+## Overview
 
 The Furniture Collections List embodies a **sophisticated, minimalist sanctuary** that marries the pristine simplicity of Scandinavian design with the refined visual language of luxury editorial presentation. The interface feels **spacious and tranquil**, prioritizing breathing room and visual clarity above all else. The design philosophy is gallery-like and photography-first, allowing each furniture piece to command attention as an individual art object.
 
@@ -15,7 +102,7 @@ The overall mood is **airy yet grounded**, creating an aspirational aesthetic th
 - Refined, understated interactive elements
 - Professional yet inviting editorial tone
 
-## 2. Color Palette & Roles
+## Colors
 
 ### Primary Foundation
 - **Warm Barely-There Cream** (#FCFAFA) – Primary background color. Creates an almost imperceptible warmth that feels more inviting than pure white, serving as the serene canvas for the entire experience.
@@ -29,12 +116,12 @@ The overall mood is **airy yet grounded**, creating an aspirational aesthetic th
 - **Soft Warm Gray** (#6B6B6B) – Secondary text used for body copy, product descriptions, and supporting metadata. Creates clear typographic hierarchy without harsh contrast.
 - **Ultra-Soft Silver Gray** (#E0E0E0) – Tertiary color for borders, dividers, and subtle structural elements. Creates separation so gentle it's almost imperceptible.
 
-### Functional States (Reserved for system feedback)
-- **Success Moss** (#10B981) – Stock availability, confirmation states, positive indicators
-- **Alert Terracotta** (#EF4444) – Low stock warnings, error states, critical alerts
-- **Informational Slate** (#64748B) – Neutral system messages, informational callouts
+### Functional States (Reserved for system feedback — WCAG AA Compliant)
+- **Success Moss** (#047857) – Stock availability, confirmation states, positive indicators
+- **Alert Terracotta** (#B91C1C) – Low stock warnings, error states, critical alerts
+- **Informational Slate** (#475569) – Neutral system messages, informational callouts
 
-## 3. Typography Rules
+## Typography
 
 **Primary Font Family:** Manrope  
 **Character:** Modern, geometric sans-serif with gentle humanist warmth. Slightly rounded letterforms that feel contemporary yet approachable.
@@ -53,7 +140,52 @@ The overall mood is **airy yet grounded**, creating an aspirational aesthetic th
 - Consistent vertical rhythm with 2-3rem between related text blocks
 - Large margins (4-6rem) between major sections to reinforce spaciousness
 
-## 4. Component Stylings
+## Layout
+
+### Grid & Structure
+- **Max Content Width:** 1440px for optimal readability and visual balance on large displays
+- **Grid System:** Responsive 12-column grid with fluid gutters (24px mobile, 32px desktop)
+- **Product Grid:** 4 columns on large desktop, 3 on desktop, 2 on tablet, 1 on mobile
+- **Breakpoints:** 
+  - Mobile: <768px
+  - Tablet: 768-1024px  
+  - Desktop: 1024-1440px
+  - Large Desktop: >1440px
+
+### Whitespace Strategy (Critical to the Design)
+- **Base Unit:** 8px for micro-spacing, 16px for component spacing
+- **Vertical Rhythm:** Consistent 2rem (32px) base unit between related elements
+- **Section Margins:** Generous 5-8rem (80-128px) between major sections creating dramatic breathing room
+- **Edge Padding:** 1.5rem (24px) mobile, 3rem (48px) tablet/desktop for comfortable framing
+- **Hero Sections:** Extra-generous top/bottom padding (8-12rem) for impactful presentation
+
+### Alignment & Visual Balance
+- **Text Alignment:** Left-aligned for body and navigation (optimal readability), centered for hero headlines and featured content
+- **Image to Text Ratio:** Heavily weighted toward imagery (70-30 split) reinforcing photography-first philosophy
+- **Asymmetric Balance:** Large hero images offset by compact, refined text blocks
+- **Visual Weight Distribution:** Strategic use of whitespace to draw eyes to hero products and primary CTAs
+- **Reading Flow:** Clear top-to-bottom, left-to-right pattern with intentional focal points
+
+### Responsive Behavior & Touch
+- **Mobile-First Foundation:** Core experience designed and perfected for smallest screens first
+- **Progressive Enhancement:** Additional columns, imagery, and details added gracefully at larger breakpoints
+- **Touch Targets:** Minimum 44x44px for all interactive elements (WCAG AAA compliant)
+- **Image Optimization:** Responsive images with appropriate resolutions for each breakpoint, lazy-loading for performance
+- **Collapsing Strategy:** Navigation collapses to hamburger, grid reduces columns, padding scales proportionally
+
+## Elevation & Depth
+
+- **Default Surface Layering:** Alternates between Warm Barely-There Cream (`#FCFAFA`) and Crisp Very Light Gray (`#F5F5F5`) to establish hierarchy without heavy shadows.
+- **Hover Elevation:** Flat by default; whisper-soft diffused shadow appears on hover (`0 2px 8px rgba(0,0,0,0.06)`).
+- **Hairline Borders:** Optional 1px border in Ultra-Soft Silver Gray (`#E0E0E0`) for delicate definition.
+
+## Shapes
+
+- **Interactive Elements:** Subtly rounded corners (`8px` / `0.5rem` radius) on buttons and inputs.
+- **Cards & Containers:** Gently rounded corners (`12px` / `0.75rem` radius) creating soft, refined edges.
+- **Product Imagery:** Full-bleed square (`1:1`) or landscape (`4:3`) aspect ratios.
+
+## Components
 
 ### Buttons
 - **Shape:** Subtly rounded corners (8px/0.5rem radius) – approachable and modern without appearing playful or childish
@@ -93,40 +225,15 @@ The overall mood is **airy yet grounded**, creating an aspirational aesthetic th
 - **Hover Behavior:** Gentle lift effect (translateY -4px) combined with enhanced shadow
 - **Spacing:** Consistent 1.5rem internal padding below image
 
-## 5. Layout Principles
+## Do's and Don'ts
 
-### Grid & Structure
-- **Max Content Width:** 1440px for optimal readability and visual balance on large displays
-- **Grid System:** Responsive 12-column grid with fluid gutters (24px mobile, 32px desktop)
-- **Product Grid:** 4 columns on large desktop, 3 on desktop, 2 on tablet, 1 on mobile
-- **Breakpoints:** 
-  - Mobile: <768px
-  - Tablet: 768-1024px  
-  - Desktop: 1024-1440px
-  - Large Desktop: >1440px
+- Do use descriptive color names paired with hex codes when referencing tokens in Stitch prompts.
+- Do maintain expansive whitespace (80–128px between major sections) to preserve the gallery atmosphere.
+- Do enforce minimum 44x44px touch targets across all interactive controls.
+- Don't use pure black (`#000000`) or harsh high-contrast drop shadows.
+- Don't overcrowd product grids beyond 4 columns on large desktop viewports.
 
-### Whitespace Strategy (Critical to the Design)
-- **Base Unit:** 8px for micro-spacing, 16px for component spacing
-- **Vertical Rhythm:** Consistent 2rem (32px) base unit between related elements
-- **Section Margins:** Generous 5-8rem (80-128px) between major sections creating dramatic breathing room
-- **Edge Padding:** 1.5rem (24px) mobile, 3rem (48px) tablet/desktop for comfortable framing
-- **Hero Sections:** Extra-generous top/bottom padding (8-12rem) for impactful presentation
-
-### Alignment & Visual Balance
-- **Text Alignment:** Left-aligned for body and navigation (optimal readability), centered for hero headlines and featured content
-- **Image to Text Ratio:** Heavily weighted toward imagery (70-30 split) reinforcing photography-first philosophy
-- **Asymmetric Balance:** Large hero images offset by compact, refined text blocks
-- **Visual Weight Distribution:** Strategic use of whitespace to draw eyes to hero products and primary CTAs
-- **Reading Flow:** Clear top-to-bottom, left-to-right pattern with intentional focal points
-
-### Responsive Behavior & Touch
-- **Mobile-First Foundation:** Core experience designed and perfected for smallest screens first
-- **Progressive Enhancement:** Additional columns, imagery, and details added gracefully at larger breakpoints
-- **Touch Targets:** Minimum 44x44px for all interactive elements (WCAG AAA compliant)
-- **Image Optimization:** Responsive images with appropriate resolutions for each breakpoint, lazy-loading for performance
-- **Collapsing Strategy:** Navigation collapses to hamburger, grid reduces columns, padding scales proportionally
-
-## 6. Design System Notes for Stitch Generation
+## Design System Notes for Stitch Generation
 
 When creating new screens for this project using Stitch, reference these specific instructions:
 

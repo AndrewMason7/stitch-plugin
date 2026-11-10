@@ -10,12 +10,12 @@ Uploads a `DESIGN.md` file to a project via the `BatchCreateScreens` endpoint.
 This is the first step in creating a design system from a markdown file.
 
 > [!NOTE]
-> Use the `upload-to-stitch` skill's script instead of the `upload_design_md`
+> Use the `stitch-upload-to-stitch` skill's script instead of the `upload_design_md`
 > MCP tool. The script handles base64 encoding in-process, avoiding the model's
 > output token limit.
 
 ```bash
-python3 <SKILL_DIR>/scripts/upload_to_stitch.py \
+python3 skills/stitch-upload-to-stitch/scripts/upload_to_stitch.py \
   --project-id <PROJECT_ID> \
   --file-path /path/to/DESIGN.md \
   --api-key <API_KEY>

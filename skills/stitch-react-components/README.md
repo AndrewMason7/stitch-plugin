@@ -3,7 +3,7 @@
 ## Install
 
 ```bash
-npx skills add google-labs-code/stitch-skills --skill react:components --global
+agy plugin install https://github.com/AndrewMason7/stitch-plugin
 ```
 
 ## Example Prompt
@@ -17,9 +17,10 @@ Convert my Landing Page screen in my Podcast Stitch Project to a React component
 This repository follows the **Agent Skills** open standard. Each skill is self-contained with its own logic, validation scripts, and design tokens.
 
 ```text
-skills/react-components/
+skills/stitch-react-components/
 ├── SKILL.md           — Core instructions & workflow
 ├── package.json       — Validator dependencies
+├── references/        — Design-to-code remediation runbook
 ├── scripts/           — Networking & AST validation
 ├── resources/         — Style guides & API references
 └── examples/          — Gold-standard code samples

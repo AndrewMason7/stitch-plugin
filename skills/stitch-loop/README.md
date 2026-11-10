@@ -5,7 +5,7 @@ Teaches agents to iteratively build websites using Stitch with an autonomous bat
 ## Install
 
 ```bash
-npx skills add google-labs-code/stitch-skills --skill stitch-loop --global
+agy plugin install https://github.com/AndrewMason7/stitch-plugin
 ```
 
 ## What It Does
@@ -20,7 +20,7 @@ Enables continuous, autonomous website development through a "baton" system:
 ## Prerequisites
 
 - Stitch MCP Server access
-- A `DESIGN.md` file (generate with the `design-md` skill)
+- A `DESIGN.md` file (generate with the `stitch-design-md` skill)
 - A `SITE.md` file for project context
 
 ## Example Prompt
@@ -32,7 +32,7 @@ Read my next-prompt.md and generate the page using Stitch, then prepare the next
 ## Skill Structure
 
 ```
-stitch-loop/
+skills/stitch-loop/
 ├── SKILL.md              — Core pattern instructions
 ├── README.md             — This file
 ├── resources/
@@ -45,7 +45,7 @@ stitch-loop/
 
 ## Works With
 
-- **`design-md` skill**: Generate `DESIGN.md` from existing Stitch screens
+- **`stitch-design-md` skill**: Generate `DESIGN.md` from existing Stitch screens
 - **CI/CD**: GitHub Actions can trigger new iterations on push
 - **Agent chains**: Dispatch to other agents (Jules, etc.)
 

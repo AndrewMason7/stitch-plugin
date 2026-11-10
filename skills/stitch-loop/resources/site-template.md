@@ -66,7 +66,7 @@ Use these templates when setting up a new project for the build loop.
 
 ## DESIGN.md Template
 
-Generate this using the `design-md` skill from an existing Stitch screen, or create manually:
+Generate this using the `stitch-design-md` skill from an existing Stitch screen, or create manually:
 
 ```markdown
 # Design System: [Project Name]

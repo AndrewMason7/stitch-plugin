@@ -3,7 +3,7 @@
 ## Install
 
 ```bash
-npx skills add google-labs-code/stitch-skills --skill design-md --global
+agy plugin install https://github.com/AndrewMason7/stitch-plugin
 ```
 
 ## Example Prompt
@@ -17,8 +17,10 @@ Analyze my Furniture Collection project's Home screen and generate a comprehensi
 This repository follows the **Agent Skills** open standard. Each skill is self-contained with its own logic, workflow, and reference materials.
 
 ```text
-design-md/
+skills/stitch-design-md/
 ├── SKILL.md           — Core instructions & workflow
+├── references/        — DESIGN.md spec & cloud synchronization guide
+├── templates/         — Spec-compliant DESIGN.md starter template
 ├── examples/          — Sample DESIGN.md outputs
 └── README.md          — This file
 ```

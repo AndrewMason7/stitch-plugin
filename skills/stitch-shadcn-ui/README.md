@@ -3,7 +3,7 @@
 ## Install
 
 ```bash
-npx skills add google-labs-code/stitch-skills --skill shadcn-ui --global
+agy plugin install https://github.com/AndrewMason7/stitch-plugin
 ```
 
 ## What It Does
@@ -40,7 +40,7 @@ shadcn/ui is a collection of beautifully designed, accessible, and customizable 
 ## Skill Structure
 
 ```text
-skills/shadcn-ui/
+skills/stitch-shadcn-ui/
 ├── SKILL.md              — Core instructions & workflow
 ├── README.md             — This file
 ├── examples/             — Example implementations

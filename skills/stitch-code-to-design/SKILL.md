@@ -16,9 +16,9 @@ allowed-tools:
 Transform your existing frontend code (React + Vite, Next.js, Angular, Vue, etc.) into a Stitch Design so you can iterate and improve it using Stitch.
 
 This skill orchestrates three other skills in sequence:
-1. `extract-static-html`: Extract a single self-contained HTML file from your build output or running dev server (e.g., Vite dev server or Angular CLI `ng serve`).
-2. `extract-design-md`: Analyze the source code (including Angular `angular.json`, external `.html` templates, theme files, and components) to create a design system (DESIGN.md).
-3. `upload-to-stitch`: Upload that HTML file and the design system to your Stitch project.
+1. `stitch-extract-static-html`: Extract a single self-contained HTML file from your build output or running dev server (e.g., Vite dev server or Angular CLI `ng serve`).
+2. `stitch-extract-design-md`: Analyze the source code (including Angular `angular.json`, external `.html` templates, theme files, and components) to create a design system (DESIGN.md).
+3. `stitch-upload-to-stitch`: Upload that HTML file and the design system to your Stitch project.
 
 ## Workflow
 
@@ -33,8 +33,8 @@ Follow these steps to convert your existing code.
 
 #### 1. Extract Self-Contained HTML
 
-Delegate to the `extract-static-html` skill to generate a standalone HTML file.
-Read [skills/extract-static-html/SKILL.md](../extract-static-html/SKILL.md) for detailed instructions and script usage.
+Delegate to the `stitch-extract-static-html` skill to generate a standalone HTML file.
+Read [skills/stitch-extract-static-html/SKILL.md](../stitch-extract-static-html/SKILL.md) for detailed instructions and script usage.
 
 Expected output: A single file like `/path/to/extracted/standalone.html`.
 
@@ -48,27 +48,27 @@ If the user reports issues after reviewing, fix them before continuing.
 
 #### 3. Extract Design System (File)
 
-Delegate to the `extract-design-md` skill to analyze the project's source files
+Delegate to the `stitch-extract-design-md` skill to analyze the project's source files
 (components, stylesheets, theme configs) and produce a design system. Read
-[skills/extract-design-md/SKILL.md](../extract-design-md/SKILL.md) for the
+[skills/stitch-extract-design-md/SKILL.md](../stitch-extract-design-md/SKILL.md) for the
 full analysis workflow.
 
-Write `.stitch/DESIGN.md` following the `extract-design-md` skill's output
+Write `.stitch/DESIGN.md` following the `stitch-extract-design-md` skill's output
 structure.
 
 #### 4. Upload DESIGN.md and Create Design System in Stitch
 
-Delegate to the `manage-design-system` skill to upload the `DESIGN.md` and
+Delegate to the `stitch-manage-design-system` skill to upload the `DESIGN.md` and
 create the design system in Stitch. Read
-[skills/manage-design-system/SKILL.md](../manage-design-system/SKILL.md) for
+[skills/stitch-manage-design-system/SKILL.md](../stitch-manage-design-system/SKILL.md) for
 the full workflow (upload script usage, `create_design_system_from_design_md`
 call, and required schemas). Pass
 `--generated-by 'stitch-code-to-design'` when uploading.
 
 #### 5. Upload HTML to Stitch
 
-Use the same `upload-to-stitch` skill's script to upload the extracted HTML file.
-Read [skills/upload-to-stitch/SKILL.md](../upload-to-stitch/SKILL.md) for detailed instructions and script usage.
+Use the same `stitch-upload-to-stitch` skill's script to upload the extracted HTML file.
+Read [skills/stitch-upload-to-stitch/SKILL.md](../stitch-upload-to-stitch/SKILL.md) for detailed instructions and script usage.
 
 You will need:
 - The path to the standalone HTML file generated in Step 1.

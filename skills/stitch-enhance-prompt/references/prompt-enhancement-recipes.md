@@ -1,44 +1,62 @@
 # Stitch Prompt Enhancement Recipes
 
-High-performing prompt templates engineered for the Google Stitch screen generation pipeline.
+High-performing structural prompt templates engineered for the Google Stitch screen generation pipeline.
+
+> [!NOTE]
+> **Design System Separation:** In accordance with Stitch prompt architecture, these generation recipes focus strictly on **layout, component hierarchy, and interactive structure**. Color palettes, typography tokens, and corner roundness should be managed at the project level via `.stitch/DESIGN.md` and passed through the `designSystem` parameter rather than hardcoded into generation prompts.
 
 ---
 
 ## 1. SaaS Executive Dashboard (Desktop, 1280px)
 
 ```text
-A modern B2B SaaS executive metrics dashboard with dark mode glassmorphism aesthetics.
-Layout: Fixed left navigation sidebar with collapsed icon mode, sticky top search header with notifications and user profile avatar.
-Main Content:
-- Top row: 4 key KPI cards (ARR, Churn Rate, Active Users, Net Retention) featuring micro-sparkline charts and percentage change indicators.
-- Middle row: Bento grid featuring an interactive revenue timeline area chart (left 60%) and an activity stream widget with realtime status pills (right 40%).
-- Bottom section: High-density transactions table with column sorting headers, status badges (Completed, Pending, Failed), and pagination footer.
-Visuals: Deep slate #0B0F19 background, subtle translucent frosted surfaces with backdrop-blur-md, 1px border border-white/10, electric indigo #6366F1 accents. Inter typography with tabular figures.
+A modern B2B SaaS executive metrics dashboard with elevated glassmorphic surfaces and asymmetric Bento grid organization.
+
+**PLATFORM:** Web, Desktop-first (1280px max-width container)
+
+**PAGE STRUCTURE:**
+1. **Left Navigation Sidebar:** Fixed vertical navigation rail with brand mark at top, primary workspace links (Overview, Revenue, Cohorts, Settings) with active indicator bar, and collapsed icon mode toggle at bottom.
+2. **Sticky Top Header:** Breadcrumb trail on the left, global command-palette search input (`Cmd+K` badge) in the center, and notification bell + user profile trigger on the right.
+3. **KPI Summary Row:** 4-column metric strip (ARR, Net Dollar Retention, Active Workspaces, Churn Rate), each card containing a primary monospace metric readout, period-over-period delta badge, and inline micro-sparkline.
+4. **Asymmetric Analytics Bento Grid:**
+   - **Primary Tile (Left 65%):** Interactive multi-series area chart for revenue trajectory with timeframe segmented controls (7D, 30D, QTD, YTD).
+   - **Secondary Tile (Right 35%):** Live customer activity feed with status pills, workspace avatars, and relative timestamps.
+5. **High-Density Transactions Table:** Filterable data table with sticky column headers, sortable numeric columns, status chips (Settled, Pending, Flagged), and pagination controls.
 ```
 
 ---
 
-## 2. Crypto Portfolio Tracker (Mobile, 390px)
+## 2. Crypto Portfolio & DeFi Tracker (Mobile, 390px)
 
 ```text
-A sleek cryptocurrency portfolio tracking mobile application.
-Layout: Mobile portrait (390px).
-Header: Minimalist TopAppBar with network status indicator, wallet address pill with copy button, and QR scanner icon.
-Hero: Total balance display in large display font with 24h PnL badge (+12.4%), accompanied by smooth time-range tabs (1H, 1D, 1W, 1M, 1Y, ALL).
-Actions: Quick action pill row (Send, Receive, Swap, Buy) with rounded icons.
-Holdings List: Scrollable asset cards (Bitcoin, Ethereum, Solana) showing coin icon, name, ticker, current holdings value, price, and mini sparkline.
-Navigation: Fixed bottom tab bar (Home, Markets, Swap, Activity, Settings) with subtle blur and active icon glow.
-Visuals: Deep midnight background, vibrant emerald green #10B981 for profits, subtle neon violet #8B5CF6 accents.
+A tactile mobile portfolio and asset tracking interface designed for one-handed thumb navigation and rapid financial scanning.
+
+**PLATFORM:** Mobile, Portrait (390px viewport, 44px minimum touch targets)
+
+**PAGE STRUCTURE:**
+1. **Top App Bar:** Compact header featuring network status indicator pill on the left, truncated wallet address chip with copy trigger in the center, and QR scanner action button on the right.
+2. **Portfolio Balance Hero:** Asymmetric left-aligned balance readout in large display scale with 24-hour delta pill, paired with an interactive scrubbing sparkline and timeframe selector tabs (1H, 1D, 1W, 1M, ALL).
+3. **Quick Action Dock:** 4-button tactile action row (Send, Receive, Swap, Bridge) with distinct icon containers and concise labels.
+4. **Holdings List Section:** Section header with sort filter ("By Value"), followed by a vertical stack of asset rows showing token emblem, name, ticker symbol, current balance, fiat valuation, and 24h percentage change.
+5. **Bottom Navigation Bar:** Fixed 4-tab bar (Portfolio, Markets, Activity, Settings) with frosted backdrop blur and active tab indicator.
 ```
 
 ---
 
-## 3. High-Converting Landing Page (Desktop, 1280px)
+## 3. Developer Platform Landing Page (Desktop, 1280px)
 
 ```text
-A high-converting landing page hero and features section for an AI developer platform.
-Header: Floating sticky navigation pill with logo, nav links (Product, Docs, Pricing, Blog), and dual CTAs ("Sign In" ghost button, "Start Building" gradient button).
-Hero: Centered typography with bold headline featuring animated gradient text ("Build Software at the Speed of Thought"), supporting subtitle, email waitlist input with embedded submit button, and social proof avatar stack ("Loved by 10,000+ engineers").
-Visual Preview: Slanted 3D mockup of the IDE code editor with syntax highlighting, glowing ambient background blur, and floating feature badges.
-Feature Bento: 3-column asymmetric grid highlighting real-time collaboration, auto-refactoring, and instant CI/CD deployment.
+An editorial, high-contrast developer platform landing page featuring an asymmetric split-screen hero and modular Bento feature showcase.
+
+**PLATFORM:** Web, Desktop-first (1280px responsive grid)
+
+**PAGE STRUCTURE:**
+1. **Sticky Header:** Horizontal navigation bar with brand mark on the left, section links (Architecture, SDK, Benchmarks, Docs, Pricing) in the center, and a single primary CTA button ("Start Building") on the right.
+2. **Asymmetric Split Hero (60/40):**
+   - **Left Column:** Category eyebrow badge, high-contrast display headline with inline visual punctuation, concise 65ch technical value proposition, and a primary action form (email input + submit CTA) paired with a copyable CLI install snippet.
+   - **Right Column:** Interactive multi-tab code editor and terminal preview window demonstrating live SDK initialization and streaming telemetry output.
+3. **Asymmetric Feature Bento Grid (2-Row):**
+   - **Row 1 (65/35 Split):** Architecture diagram card showcasing zero-latency edge routing alongside a real-time benchmark comparison card.
+   - **Row 2 (35/65 Split):** Security and compliance specification card paired with an interactive API schema explorer preview.
+4. **Footer:** Structured 4-column documentation and resource directory, system status indicator pill, and copyright metadata.
 ```

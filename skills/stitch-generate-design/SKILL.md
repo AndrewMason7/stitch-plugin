@@ -37,7 +37,7 @@ user's prompt.
   `list_design_systems`. If one exists, design tokens (colors, fonts, roundness)
   are already applied at the project level — do NOT include any color, font, or
   theme instructions in the generation prompt. If none exists, delegate to the
-  **manage-design-system** skill first before generating screens.
+  **stitch-manage-design-system** skill first before generating screens.
 
 ### 2. Refine UI/UX Terminology
 
@@ -54,7 +54,7 @@ adjective palettes, color roles, and shape descriptions.
 
 Format the enhanced prompt for Stitch. Focus exclusively on **layout, content,
 and structure** — never include colors, fonts, or theme instructions (these are
-handled by the manage-design-system skill at the project level).
+handled by the `stitch-manage-design-system` skill at the project level).
 
 For **new screens**, use this template:
 
@@ -80,7 +80,7 @@ For **edits**, be specific about what to change:
 > [!CAUTION]
 > Do NOT include hex codes, font names, color palettes, roundness values, or
 > any design system tokens in a **generation** prompt. These are applied at the
-> project level by the manage-design-system skill and will conflict if
+> project level by the `stitch-manage-design-system` skill and will conflict if
 > duplicated. (For **edit** prompts, hex codes are acceptable for precise
 > color adjustments.)
 
@@ -165,7 +165,7 @@ exists, create one using `create_project`.
 
 #### 2. Upload the Image
 
-Delegate to the **upload-to-stitch** skill to upload the image to the project.
+Delegate to the **stitch-upload-to-stitch** skill to upload the image to the project.
 This creates a new screen with the image as its content.
 
 #### 3. Refine with Edit
@@ -251,7 +251,7 @@ versions to ensure the local files reflect the latest edits.
 After downloading assets, update `.stitch/metadata.json` to reflect any changes
 (e.g., updated screen titles or new screen IDs from the edit). The metadata
 file tracks all screens, their device types, and design system info. See the
-**manage-design-system** skill's `examples/metadata.json` for the format.
+**stitch-loop** skill (`skills/stitch-loop/SKILL.md`) for the `.stitch/metadata.json` schema.
 
 #### 7. Verify and Repeat
 
